@@ -1,0 +1,20 @@
+"""
+запуск приложения
+"""
+import sys
+import os
+
+# Добавляем путь к src в PYTHONPATH
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "src")))
+
+from main import ReactionTrainer
+
+if __name__ == "__main__":
+    try:
+        print("Приложение запущено")
+        app = ReactionTrainer()
+        app.run()
+        print("Выход из приложения")
+    except Exception as e:
+        import traceback
+        print(f"Возникла ошибка: {e}")
